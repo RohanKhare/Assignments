@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <style>
+        #val1, #val2, #val3, #val4{
+
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 5;
+        }
+
+    
+    </style>
+    <script type="text/javascript">
+            function valid()
+            {
+                var name1,email1,pass1,cpass1;
+                name1 = document.getElementById("name").value;               
+                email1 = document.getElementById("email").value;
+                pass1 = document.getElementById("pass").value;
+                cpass1 = document.getElementById("cpass").value;
+                
+                
+                var patt1 =/[A-z]/g;
+                var patt2=/[0-9]/g;
+                var epatt=/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+
+                var len= pass1.length;
+                var result1 = pass1.match(patt1)    
+                var result2 = pass1.match(patt2)
+                var result3 = email1.match(epatt)
+
+                var comp = pass1.localeCompare(cpass1);
+
+               if(name1=="" || email1==""|| pass1=="" || cpass1=="")
+                {
+                    //alert("All fields are mandatory")
+                    document.getElementById("val1").style.color="Black"
+                    document.getElementById("val2").style.color="white"
+                    document.getElementById("val3").style.color="white"
+                    document.getElementById("val4").style.color="white"
+                }
+                else if(result3==null)
+                {
+                    //alert("Invalid Email")   
+                   
+
+                    document.getElementById("val1").style.color="white"
+                    document.getElementById("val2").style.color="Black"
+                    document.getElementById("val3").style.color="white"
+                    document.getElementById("val4").style.color="white"
+                }
+                else if(len<=5 || result1==null || result2==null)
+                {
+                    //alert("Password should have atleast% characters,1 Number,1 Alphabate")
+                    document.getElementById("val1").style.color="white"
+                    document.getElementById("val2").style.color="white"
+                    document.getElementById("val3").style.color="Black"
+                    document.getElementById("val4").style.color="white"
+                }
+                else if(comp!=0)
+                {
+                    //alert("Password Doesnot Match")
+                    document.getElementById("val1").style.color="white"
+                    document.getElementById("val2").style.color="white"
+                    document.getElementById("val3").style.color="white"
+                    document.getElementById("val4").style.color="black"
+                }
+                else
+                {
+                    alert("Valid Login")
+                    document.getElementById("log").hidden=true;
+                }
+            
+
+
+            }
+    </script>
+    
+</head>
+<body>   
+    <div id="log">
+        <form name="login">
+            <h3>
+            
+                Name : <input type="text" id="name" name="name"><span style="color: white" id="val1">All Fields are mandatory</span><br>
+                Email : <input type="text" name="email" id="email"><span style="color: white" id="val2">Invalid Email</span><br>
+                Password : <input type="password" name="pass" id="pass"><span style="color: white" id="val3">Password should have atleast 5 characters,1 Number,1 Alphabate</span><br>
+                Confirm Password : <input type="password" name="cpass" id="cpass"><span style="color: white" id="val4">Password doesnot Match</span><br>
+                <input type="button" value="LogIn" onclick="valid()"><br>
+            </h3>
+        </form>
+    </div> 
+</body>
+</html>

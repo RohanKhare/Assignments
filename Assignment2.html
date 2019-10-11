@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>   
+    <style>
+        .black{
+            border:black; 
+            border-style:solid;
+            border-bottom: 5;
+            color:black;
+            padding:20px;
+            margin:10px;
+            height: 100px; 
+            width: 125px;        
+            text-align: center;            
+        }        
+
+        .blue{
+            border:black; 
+            border-style:solid;
+            border-bottom: 5;
+            background-color:white;
+            color:black;
+            padding:20px;
+            margin:10px;
+            height: 100px; 
+            width: 125px;
+            text-align: center;  
+        }   
+        .brown{
+            border:black; 
+            border-style:solid;
+            border-bottom: 5;
+            background-color:white;
+            color:black;
+            padding:20px;
+            margin:10px;
+            height: 100px; 
+            width: 125px;
+            text-align: center;  
+        }
+        
+        .body:hover{
+            background: skyblue
+            br
+        }
+
+    </style>
+
+    <script>
+            function OnMouseOut(color1){
+                document.body.style.color=color1;
+            }
+            function onMouseBlack(color2){
+                    document.body.style.color=color2;
+            }
+    </script>
+  
+</head>
+<body class="body" >
+    <div>
+        <div class="black" onmouseover="onMouseBlack(black)" onmouseout="onMouseOut(white)">
+                <h2>BLACK</h2>
+        </div> 
+        <div class="blue" >
+                <h2>Royal Blue</h2>
+        </div> 
+        <div class="brown" >
+                <h2>Sandybrown</h2>
+        </div>        
+    </div>
+</body>
+</html>

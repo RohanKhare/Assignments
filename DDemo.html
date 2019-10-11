@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="jquery-3.4.1.min.js"></script>
+</head>
+<body>
+
+    <div id="d">T E X T = > </div>
+
+    <button id="btn">Click!</button>    
+    <script>
+            function f1(){
+                $("#d").append("   Hiiii!!!   ");
+            }
+            function f2(){
+                $("#d").append("   Hello!!!   ");
+            }
+            function f3(){
+                $("#d").append("   wassup?    ");
+            }
+            var dfd = $.Deferred();
+    
+            dfd
+            .done([f1,f3],f2,[f3,f1])
+            .done(function(n){
+                $("#d").append( n + "WE ARE DONE.");
+            });
+
+            $("#btn").on("click",function(){
+                dfd.resolve("A N D ");
+        
+            })
+            </script>
+</body>
+</html>

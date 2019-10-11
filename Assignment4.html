@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>    
+    <script src="jquery-3.4.1.min.js"></script>    
+    <script src="index.js"></script>  
+    
+    <script>
+           $(document).ready(function(){
+           $("#two").hide();
+           $("#three").hide();
+           $("#hr1").hide();
+        })
+    </script>
+</head>
+<body>
+    <div id="one">             
+         <h1>R E G I S T R A T I O N</h1>
+             <label for="name">Name : </label>
+             <input type="text" name="name" id="name1"><br><br>
+ 
+             <label for="email" >Email : </label>
+             <input type="text" name="email" id="email1"><br><br>
+ 
+             <label for="pass">Password : </label>
+             <input type="text" name="pass" id="pass1"><br><br>
+ 
+             <label for="cpass">Confirm Password : </label>
+             <input type="text" name="cpass" id="cpass1"><br><br>
+ 
+             <input type="button" value="Submit" id="sub1" ><br><br>         
+     </div>
+
+
+     <script type="module" src="index.js"></script>
+     <hr id="hr1">
+     <div id="two">
+            <h1>L O G I N</h1>
+            <form name="form2" id="register">
+ 
+                <label for="email">Email : </label>
+                <input type="text" name="email" id="email2"><br><br>
+    
+                <label for="pass">Password : </label>
+                <input type="text" name="pass" id="pass2"><br><br>            
+    
+                <input type="button" id="sub2" value="Submit"><br><br>
+            </form>
+
+
+            <script type="module" src="index.js"></script>
+           
+     </div>
+     <div id="three">
+
+        <h1>welcome!!</h1>
+     </div>
+</body>
+</html>

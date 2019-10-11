@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <script type="text/javascript">
+        function login()
+        {
+
+            var uname, pass;
+            uname = document.getElementById("email").value;
+            pass= document.getElementById("pass").value;
+            if(uname=="" || pass=="")
+            {
+                alert("Username and/or Password should not be blank")
+             
+            }
+            if(uname.includes("@") && uname.includes("."))
+            {
+                document.write("Welcome "+uname)
+            }
+            else
+            {
+                alert("Invalid Email") 
+            }            
+        }
+        
+    </script>
+    
+</head>
+<body>
+    
+    <form name="sample" >
+        <h3>
+            Email : <input type ="text" id="email" name="uname"><br>
+            Password : <input type ="password" id="pass" name="pass"><br>
+            <input type="button" Value ="LogIn" onclick="login()">
+        </h3>
+
+    </form>
+</body>
+</html>

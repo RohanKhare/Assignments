@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        var samp;
+        var c=0;
+        var t;
+        var t1;
+        var timerOn = 0;
+        function myFun()
+        {
+            var samp = setTimeout(sample,10000);
+        }
+
+        function sample()
+        {              
+                let sample1 = new Promise(function(resolve, reject){
+                let a = 2;
+
+                if(a==2){
+                    resolve('Hello!!');
+                }
+                else{   
+                    reject('Invalid');
+                }
+                });
+
+                sample1.then(function(fromResolve){
+                    alert('Result :' + fromResolve);
+                }).catch(function(fromReject){
+                    alert('Result :' + fromReject);
+                });
+        }
+
+        function timeCount()
+        {
+            document.getElementById("timer").innerText = c;
+            c = c + 1;
+            t = setTimeout(timeCount,1000);
+        }
+        function startCount()
+        {
+            if(!timerOn)
+            {
+                timerOn = 1;
+                timeCount();
+              
+            }
+        }
+
+        
+    </script>
+</head>
+<body>
+    <button id="demo1" onclick="myFun();startCount()">CLICK ME!</button>
+    <h3><button id="timer" onc>Timer</button></h3>
+</body>
+</html>
