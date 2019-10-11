@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <script>
+
+        //document.getElementById("log").addEventListener("click",val);
+        function goo(){
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function (){
+            if(this.readyState==4 && this.status ==200){
+               document.getElementById("two").innerHTML=this.responseText;   
+
+               var val = document.getElementById("selectOne").value;
+                //alert(val);
+               if(val==1)
+               {
+                    goo1();
+               }
+               else if(val==2)
+               {
+                    goo2();
+               }
+            }
+        };        
+        xhttp.open("GET", "welcome.html",true);
+        xhttp.send();
+        }
+
+        function goo1()
+        {
+                var xhttp1 = new XMLHttpRequest();
+                xhttp1.onreadystatechange = function (){
+                if(this.readyState==4 && this.status ==200){
+                document.getElementById("three").innerHTML=this.responseText;                      
+                    }
+                };        
+                xhttp1.open("GET", "admin.html",true);
+                xhttp1.send();
+        }
+
+        function goo2()
+        {
+                var xhttp2 = new XMLHttpRequest();
+                xhttp2.onreadystatechange = function (){
+                if(this.readyState==4 && this.status ==200){
+                document.getElementById("three").innerHTML=this.responseText;                     
+                    }
+                };        
+                xhttp2.open("GET", "guest.html",true);
+                xhttp2.send();
+        }
+        
+    </script>
+    
+</head>
+<body>
+    <div id="one">
+        <h3>User Type :</h3>
+        <select id="selectOne">
+            <option value="1">ADMIN</option>
+            <option value="2">GUEST</option>
+        </select>
+        <input type="button" value="LOGIN" id="log" onclick="goo()">
+    </div>
+
+    <div id="two"></div><div id="three"></div>
+</body>
+</html>
